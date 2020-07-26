@@ -8,14 +8,13 @@ import {
   Button,
   InputLabel,
   Select,
-  MenuItem
+  MenuItem,
 } from "@material-ui/core";
 import {
-  getCountries,
   getCountryCallingCode,
   isValidPhoneNumber,
 } from "react-phone-number-input";
-import en from "react-phone-number-input/locale/en.json";
+import codes from "country-calling-code";
 
 export const ContactList = (props) => {
   const [isAddModalOpen, setIsAddModalOpen] = useState(false);
@@ -206,11 +205,12 @@ export const ContactList = (props) => {
                   }}
                   error={!mobileIsValid}
                 >
-                  {getCountries().map((country) => (
-                    <MenuItem key={country} value={country}>
-                      {en[country]} +{getCountryCallingCode(country)}
+                  {codes.map((x, i) => (
+                    <MenuItem key={i} value={x.isoCode2}>
+                      {x.country} +{x.countryCodes[0]}
                     </MenuItem>
                   ))}
+
                 </Select>
               </div>
               <div style={{ width: "20px" }} />
@@ -256,7 +256,6 @@ export const ContactList = (props) => {
     });
     return array;
   };
-
 
   return (
     <div>
