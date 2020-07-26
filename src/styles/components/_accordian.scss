@@ -1,0 +1,71 @@
+.accordian-container {
+  .circle-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 35px;
+    font-size: 20px;
+    color: #fff;
+    line-height: 40px;
+    text-align: center;
+    background: #f4773f;
+  }
+
+  .accordianData-header-value {
+    padding-left: 10px;
+  }
+
+  .accordian-desc-value-container {
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+    padding-left: 50px;
+    width: 200px;
+    justify-content: space-between;
+
+    img {
+      width: 20px;
+    }
+
+    #openAccordianData-value {
+      font-size: 14px;
+    }
+
+    #openAccordianData-desc {
+      font-size: 10px;
+      color: #787878;
+      text-align: left;
+    }
+
+    a {
+      color: #000;
+      text-decoration: none;
+    }
+  }
+  // Overwrite
+  .MuiAccordionSummary-content {
+    align-items: center;
+  }
+  .MuiAccordionSummary-content.Mui-expanded {
+    margin: 0;
+  }
+
+  .MuiAccordionSummary-root.Mui-expanded {
+    min-height: 50px;
+  }
+  .MuiAccordionDetails-root {
+    display: block;
+  }
+
+  .button-container {
+    // text-align: right;
+    margin-top: 50px;
+    padding-top: 5px;
+    border-top: 1px solid #44444440;
+
+    .button {
+      min-width: 80px;
+      font-size: 10px;
+      margin-right: 15px;
+    }
+  }
+}

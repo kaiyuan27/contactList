@@ -1,0 +1,15 @@
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  font-size: 30px;
+}
+
+.header-title {
+  flex: 2;
+}
+
+.header-plus {
+  .MuiSvgIcon-root {
+    color: black;
+  }
+}
