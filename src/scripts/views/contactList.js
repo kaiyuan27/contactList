@@ -11,7 +11,6 @@ import {
   MenuItem,
 } from "@material-ui/core";
 import {
-  getCountryCallingCode,
   isValidPhoneNumber,
 } from "react-phone-number-input";
 import codes from "country-calling-code";
@@ -68,6 +67,7 @@ export const ContactList = (props) => {
         gender: "",
         modile: "",
         country: "SG",
+        countryCode: '65'
       },
     });
   };
@@ -139,6 +139,11 @@ export const ContactList = (props) => {
     setIsAddModalOpen(status);
   };
 
+  const getCountryCallingCode = (value) => {
+    const countryData = codes.find((x) => x.isoCode2 === value)
+    return countryData.countryCodes[0]
+  }
+
   const modalAdd = () => {
     return (
       <Modal open={isAddModalOpen}>
@@ -199,9 +204,7 @@ export const ContactList = (props) => {
                   name="country"
                   className="country-selection"
                   renderValue={() => {
-                    return `+${getCountryCallingCode(
-                      dataObj[`id${viewEditId}`].country
-                    )}`;
+                    return `+${getCountryCallingCode(dataObj[`id${viewEditId}`].country)}`;
                   }}
                   error={!mobileIsValid}
                 >
