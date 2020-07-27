@@ -79,11 +79,15 @@
     color: white;
     background-color: rgba(63, 81, 181, 1);
   }
+
+  .duplicate-error {
+    color: red;
+  }
 }
 
 @media (min-width: 600px) {
   .modal-container {
-    width: 600px;
+    width: calc(600px - 40px);
   }
 }
 

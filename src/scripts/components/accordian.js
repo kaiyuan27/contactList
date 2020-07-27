@@ -15,8 +15,6 @@ import EmailIcon from "@material-ui/icons/Email";
 
 export const AccordianData = (props) => {
   const { name, mobile, gender, email, onEdit, onDelete, index } = props;
-
-  console.log(name)
   return (
     <Accordion className="accordian-container">
       <AccordionSummary
@@ -39,7 +37,9 @@ export const AccordianData = (props) => {
             </div>
             <div id="openAccordianData-desc">Mobile</div>
           </div>
-          <PhoneIcon />
+          <a href={`tel:${mobile}`}>
+            <PhoneIcon />
+          </a>
         </div>
         <div className="accordian-desc-value-container">
           <div className="accordian-desc-value">
@@ -56,14 +56,16 @@ export const AccordianData = (props) => {
               </div>
               <div id="openAccordianData-desc">Email</div>
             </div>
-            <EmailIcon />
+            <a href={`mailto:${email}`}>
+              <EmailIcon />
+            </a>
           </div>
         )}
         <div className="button-container">
           <Button
             className="button"
             startIcon={<DeleteIcon />}
-            onClick={() => onDelete(index)}
+            onClick={() => props.onDelete(index)}
           >
             Delete
           </Button>

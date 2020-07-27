@@ -2,14 +2,35 @@
   display: flex;
   justify-content: space-between;
   font-size: 30px;
+  background: black;
+  color: white;
+  margin: -30px -20px 0;
 }
 
 .header-title {
   flex: 2;
+  margin-left: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .header-plus {
   .MuiSvgIcon-root {
-    color: black;
+    color: white;
   }
+}
+
+
+.no-contact-header {
+  font-size: 45px;
+  color: lightgray;
+  height: calc(100vh - 85px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.data-section {
+  padding-top: 30px;
 }
